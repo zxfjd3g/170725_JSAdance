@@ -11,6 +11,14 @@
   * 如果后一种看成是引用传递, 那就值传递和引用传递都可以有
 -->
 <script type="text/javascript">
+  function fn(n) {
+
+  }
+  var a = 4
+  fn(a) // 值传递
+  a = [1, 2]
+  fn(a) // 值传递: 传递的是a的值
+      // 也有人是引用传递?  传递的是地址值
 
 </script>
 </body>

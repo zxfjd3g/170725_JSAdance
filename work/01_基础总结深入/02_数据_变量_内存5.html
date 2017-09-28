@@ -17,6 +17,15 @@
 -->
 <script type="text/javascript">
 
+  function fn() {
+    var a = 3
+  }
+  fn() // 开始执行函数分配一块对应的内存(存储局部变量), 函数执行完后立即自动释放
+
+  var a = {n: 1}
+  a = null // {}对象成为垃圾对象, 后面某个时刻垃圾回调器回收释放内存
+
+
 </script>
 </body>
 </html>
