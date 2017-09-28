@@ -8,12 +8,20 @@
 <!--
 1. 理解
   * 全称: Immediately-Invoked Function Expression 立即调用函数表达式
-  * 别名: 匿名函数自调用
+  * 别名: 匿名函数自调用  /  自调用匿名函数
 2. 作用
   * 隐藏内部实现
   * 不污染外部命名空间
 -->
 <script type="text/javascript">
+  var a = 2
+  console.log(a)
+
+  ;(function () {
+    var a = 2
+    console.log(a)
+  })()
+
 
 </script>
 
