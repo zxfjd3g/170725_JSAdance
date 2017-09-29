@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$Title$</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*
+  在声明变量时, 会先查看变量是否已经存在, 如果已经存在
+  */
+  function a() {
+    console.log('a()')
+  }
+  var a // 声明被忽略了
+  /*****/
+  a = 3
+
+  function b() {
+    console.log('b1()')
+  }
+  function b() {
+    console.log('b2()')
+  }
+  b()
+
+
+</script>
+</body>
+</html>
