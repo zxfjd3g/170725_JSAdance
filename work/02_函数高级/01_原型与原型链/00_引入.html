@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_引入</title>
+</head>
+<body>
+<script type="text/javascript">
+  function Person(name, age) {
+    this.name = name
+    this.age = age
+    this.toString = function () {
+      return this.name+', '+this.age
+    }
+  }
+  console.log(Person, Person.prototype)
+  var p = new Person('Tom', 18)
+  console.log(p)
+  console.log(p.toString())
+</script>
+</body>
+</html>
