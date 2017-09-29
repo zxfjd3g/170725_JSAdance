@@ -9,14 +9,14 @@
 1. 代码分类(位置)
   * 全局代码
   * 函数代码
-2. 全局执行上下文
+2. 全局执行上下文对象(真实存在的对象)
   * 在执行全局代码前将window确定为全局执行上下文
   * 对全局数据进行预处理
     * var定义的全局变量==>undefined, 添加为window的属性
     * function声明的全局函数==>赋值(fun), 添加为window的方法
     * this==>赋值(window)
-  * 开始执行全局代码
-3. 函数执行上下文
+  * 开始执行全局代码: 从window查找对应属性变量
+3. 函数执行上下文(不是真实存在的对象)
   * 在调用函数, 准备执行函数体之前, 创建对应的函数执行上下文对象
   * 对局部数据进行预处理
     * 形参变量==>赋值(实参)==>添加为执行上下文的属性
@@ -28,6 +28,31 @@
 -->
 <script type="text/javascript">
 
+  console.log(window.a1)
+  a2() // 从window找到a2执行
+  console.log(this)
+  var a1 = 3 // 从window中找到a1并赋值
+  function a2 () {
+
+  }
+  console.log('-----')
+
+
+  function fn(b3) {
+    console.log(b3)
+    console.log(b1) // undefined
+    b2()
+    console.log(arguments)  // 3,4
+    console.log(this) // window
+
+    var b1 = 3
+    function b2 () {
+      console.log('b2()')
+    }
+  }
+
+  fn(3, 4)
+  // fn.call({}, 3, 4)
 </script>
 </body>
 </html>

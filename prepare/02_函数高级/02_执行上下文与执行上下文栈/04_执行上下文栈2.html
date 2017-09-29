@@ -6,13 +6,14 @@
 </head>
 <body>
 <!--
+递归调用: 在函数内部调用自己
 1. 依次输出什么?
 2. 整个过程中产生了几个执行上下文?
 -->
 <script type="text/javascript">
   console.log('global begin: '+ i)
   var i = 1
-  foo(1);
+  foo(i);
   function foo(i) {
     if (i == 4) {
       return;

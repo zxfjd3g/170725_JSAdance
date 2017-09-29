@@ -13,17 +13,17 @@
   var A = function() {
 
   }
-  A.prototype.n = 1
-
   var b = new A()
 
-  A.prototype = {
+  A.prototype.n = 1  // 修改原型内部数据: 前后创建的所有实例都有影响
+
+  A.prototype = { // 修改显式原型的值: 后面创建的所有实例都有影响
     n: 2,
     m: 3
   }
 
   var c = new A()
-  console.log(b.n, b.m, c.n, c.m)
+  console.log(b.n, b.m, c.n, c.m) // 1 undefined   2 3
 
 
   /*
@@ -38,9 +38,9 @@
   };
   var f = new F();
   f.a()
-  f.b()
   F.a()
   F.b()
+  f.b()
 
 </script>
 </body>
