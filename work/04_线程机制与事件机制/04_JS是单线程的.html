@@ -15,8 +15,8 @@
   * 这决定了它只能是单线程，否则会带来很复杂的同步问题
 
 3. 代码的分类:
-  * 初始化代码
-  * 回调代码
+  * 初始化代码: 初始化执行的代码
+  * 回调代码: 回调函数中的代码
 4. js引擎执行代码的基本流程
   * 先执行初始化代码: 包含一些特别的代码
     * 设置定时器
@@ -25,6 +25,26 @@
   * 后面在某个时刻才会执行回调代码
 -->
 <script type="text/javascript">
+  function fn1() {
+    console.log('fn1()')
+  }
+  fn1()
+  setTimeout(function () {
+    console.log('0000')
+  }, 0)
+  setTimeout(function () {
+    console.log('333333')
+  }, 3000)
+  setTimeout(function () {
+    console.log('2222')
+    alert('22222')
+  }, 2000)
+  
+  console.log('alert之前')
+  alert('+++++') // 显示确定框, 暂停主线程的执行/暂停分线程的计时, 点击确定恢复主线程的执行/分线程计算
+  console.log('alert之后')
+  
+  
 </script>
 </body>
 </html>
