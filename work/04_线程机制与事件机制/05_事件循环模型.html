@@ -22,6 +22,21 @@
 -->
 <script type="text/javascript">
 
+  function fn1() {
+    console.log('fn1()')
+  }
+  fn1()
+  document.getElementById('btn').onclick = function () {
+    console.log('点击了')
+  }
+  setTimeout(function () {
+    console.log('到点了')
+  }, 2000)
+  function fn2() {
+    console.log('fn2()')
+  }
+  fn2()
+
 </script>
 </body>
 </html>
