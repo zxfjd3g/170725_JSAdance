@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>06_Object.create()</title>
+</head>
+<body>
+<script type="text/javascript">
+  var obj1 = {
+    name: 'Tom'
+  }
+  var obj2 = Object.create(obj1)
+  console.log(obj2, obj2.name)
+
+  var obj3 = Object.create(obj1, {
+    age: {
+      value: 12,
+      writable: true // 属性值可以修改
+    },
+    sex: {
+      value: '男',
+      writable: false  // 属性值不能修改
+    }
+  })
+  console.log(obj3, obj3.name, obj3.age, obj3.sex)
+  obj3.age = 13
+  obj3.sex = '女'
+  console.log( obj3.name, obj3.age, obj3.sex)
+
+</script>
+</body>
+</html>
